@@ -67,22 +67,10 @@ local LoadingScreen = Instance.new("Frame")
 local Z = Instance.new("TextLabel")
 local H = Instance.new("TextLabel")
 
-TopBarMain.Active = true
-TopBarMain.Draggable = true
-
-TopBarKeySystem.Active = true
-TopBarKeySystem.Draggable = true
-
-LoadingScreen.Active = true
-LoadingScreen.Draggable = true
-
-ConfirmExit.Active = true
-ConfirmExit.Draggable = true
-
 --Properties:
 
 ZenHubOfficial.Name = "ZenHubOfficial"
-ZenHubOfficial.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ZenHubOfficial.Parent = game:GetService("CoreGui")
 ZenHubOfficial.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 TopBarKeySystem.Name = "TopBarKeySystem"
@@ -90,6 +78,7 @@ TopBarKeySystem.Parent = ZenHubOfficial
 TopBarKeySystem.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 TopBarKeySystem.Position = UDim2.new(0.388125807, 0, 0.379365057, 0)
 TopBarKeySystem.Size = UDim2.new(0, 363, 0, 184)
+TopBarKeySystem.Visible = false
 TopBarKeySystem.ZIndex = 999
 
 UICorner.Parent = TopBarKeySystem
@@ -518,7 +507,7 @@ H.TextWrapped = true
 
 -- Scripts:
 
-local function WRJAPK_fake_script() -- Admin.LocalScript 
+local function BWVOQZ_fake_script() -- Admin.LocalScript 
 	local script = Instance.new('LocalScript', Admin)
 
 	local admin = {"ZenReblex", "Drizzymalachi", "Chickencobra12", "Benten777777777"}
@@ -534,8 +523,8 @@ local function WRJAPK_fake_script() -- Admin.LocalScript
 		end
 	end)
 end
-coroutine.wrap(WRJAPK_fake_script)()
-local function GQKCLUC_fake_script() -- Login.LocalScript 
+coroutine.wrap(BWVOQZ_fake_script)()
+local function WQQFK_fake_script() -- Login.LocalScript 
 	local script = Instance.new('LocalScript', Login)
 
 	local key = "ZenHub_91@187$64_Key"
@@ -547,8 +536,15 @@ local function GQKCLUC_fake_script() -- Login.LocalScript
 		end
 	end)
 end
-coroutine.wrap(GQKCLUC_fake_script)()
-local function IHNKBU_fake_script() -- All.LocalScript 
+coroutine.wrap(WQQFK_fake_script)()
+local function OGSEF_fake_script() -- TopBarKeySystem.LocalScript 
+	local script = Instance.new('LocalScript', TopBarKeySystem)
+
+	script.Parent.Active = true
+	script.Parent.Draggable = true
+end
+coroutine.wrap(OGSEF_fake_script)()
+local function WXGKRHU_fake_script() -- All.LocalScript 
 	local script = Instance.new('LocalScript', All)
 
 	script.Parent.MouseEnter:Connect(function()
@@ -572,8 +568,8 @@ local function IHNKBU_fake_script() -- All.LocalScript
 		end
 	end)
 end
-coroutine.wrap(IHNKBU_fake_script)()
-local function XYLZ_fake_script() -- Universal.LocalScript 
+coroutine.wrap(WXGKRHU_fake_script)()
+local function EMJAE_fake_script() -- Universal.LocalScript 
 	local script = Instance.new('LocalScript', Universal)
 
 	script.Parent.MouseEnter:Connect(function()
@@ -597,8 +593,8 @@ local function XYLZ_fake_script() -- Universal.LocalScript
 		end
 	end)
 end
-coroutine.wrap(XYLZ_fake_script)()
-local function QHEI_fake_script() -- ExitScript.LocalScript 
+coroutine.wrap(EMJAE_fake_script)()
+local function RBHCQQ_fake_script() -- ExitScript.LocalScript 
 	local script = Instance.new('LocalScript', ExitScript)
 
 	script.Parent.MouseEnter:Connect(function()
@@ -613,8 +609,8 @@ local function QHEI_fake_script() -- ExitScript.LocalScript
 		script.Parent.Parent.Parent.Parent.ConfirmExit.Visible = true
 	end)
 end
-coroutine.wrap(QHEI_fake_script)()
-local function KVVI_fake_script() -- ToggleChams.LocalScript 
+coroutine.wrap(RBHCQQ_fake_script)()
+local function KCWULKO_fake_script() -- ToggleChams.LocalScript 
 	local script = Instance.new('LocalScript', ToggleChams)
 
 	local enabled = false
@@ -695,8 +691,8 @@ local function KVVI_fake_script() -- ToggleChams.LocalScript
 		end
 	end
 end
-coroutine.wrap(KVVI_fake_script)()
-local function DDVRXJH_fake_script() -- ToggleAimbot.LocalScript 
+coroutine.wrap(KCWULKO_fake_script)()
+local function XLSZD_fake_script() -- ToggleAimbot.LocalScript 
 	local script = Instance.new('LocalScript', ToggleAimbot)
 
 	local uis = game:GetService("UserInputService")
@@ -767,7 +763,7 @@ local function DDVRXJH_fake_script() -- ToggleAimbot.LocalScript
 		end
 	end)
 end
-coroutine.wrap(DDVRXJH_fake_script)()
+coroutine.wrap(XLSZD_fake_script)()
 local function OMVQT_fake_script() -- ToggleChams.LocalScript 
 	local script = Instance.new('LocalScript', ToggleChams)
 
@@ -850,7 +846,7 @@ local function OMVQT_fake_script() -- ToggleChams.LocalScript
 	end
 end
 coroutine.wrap(OMVQT_fake_script)()
-local function KMPBTET_fake_script() -- ToggleAimbot_2.LocalScript 
+local function GCNW_fake_script() -- ToggleAimbot_2.LocalScript 
 	local script = Instance.new('LocalScript', ToggleAimbot_2)
 
 	local uis = game:GetService("UserInputService")
@@ -921,24 +917,38 @@ local function KMPBTET_fake_script() -- ToggleAimbot_2.LocalScript
 		end
 	end)
 end
-coroutine.wrap(KMPBTET_fake_script)()
-local function CAFTGXV_fake_script() -- Yes.LocalScript 
+coroutine.wrap(GCNW_fake_script)()
+local function GFXYW_fake_script() -- TopBarMain.LocalScript 
+	local script = Instance.new('LocalScript', TopBarMain)
+
+	script.Parent.Active = true
+	script.Parent.Draggable = true
+end
+coroutine.wrap(GFXYW_fake_script)()
+local function YLUJVE_fake_script() -- Yes.LocalScript 
 	local script = Instance.new('LocalScript', Yes)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Parent:Destroy()
 	end)
 end
-coroutine.wrap(CAFTGXV_fake_script)()
-local function IWRYP_fake_script() -- No.LocalScript 
+coroutine.wrap(YLUJVE_fake_script)()
+local function EABH_fake_script() -- No.LocalScript 
 	local script = Instance.new('LocalScript', No)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Visible = false
 	end)
 end
-coroutine.wrap(IWRYP_fake_script)()
-local function ICLH_fake_script() -- Z.LocalScript 
+coroutine.wrap(EABH_fake_script)()
+local function PRJC_fake_script() -- ConfirmExit.LocalScript 
+	local script = Instance.new('LocalScript', ConfirmExit)
+
+	script.Parent.Active = true
+	script.Parent.Draggable = true
+end
+coroutine.wrap(PRJC_fake_script)()
+local function QVRC_fake_script() -- Z.LocalScript 
 	local script = Instance.new('LocalScript', Z)
 
 	local waitDelay = false
@@ -949,8 +959,8 @@ local function ICLH_fake_script() -- Z.LocalScript
 		end
 	end
 end
-coroutine.wrap(ICLH_fake_script)()
-local function LGRUPDY_fake_script() -- H.LocalScript 
+coroutine.wrap(QVRC_fake_script)()
+local function ASMLTS_fake_script() -- H.LocalScript 
 	local script = Instance.new('LocalScript', H)
 
 	local waitDelay = false
@@ -961,11 +971,14 @@ local function LGRUPDY_fake_script() -- H.LocalScript
 		end
 	end
 end
-coroutine.wrap(LGRUPDY_fake_script)()
-local function MPSOBNB_fake_script() -- LoadingScreen.LocalScript 
+coroutine.wrap(ASMLTS_fake_script)()
+local function PVFOBAK_fake_script() -- LoadingScreen.LocalScript 
 	local script = Instance.new('LocalScript', LoadingScreen)
 
 	local waitDelay = false
+	
+	script.Parent.Active = true
+	script.Parent.Draggable = true
 	
 	while wait(0.01) do
 		if script.Parent.BackgroundTransparency > 0 then
@@ -980,4 +993,4 @@ local function MPSOBNB_fake_script() -- LoadingScreen.LocalScript
 		end
 	end
 end
-coroutine.wrap(MPSOBNB_fake_script)()
+coroutine.wrap(PVFOBAK_fake_script)()
